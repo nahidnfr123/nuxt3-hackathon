@@ -30,7 +30,7 @@
             input-class="w-full"
             :disabled="!valid || loading"
         >
-          {{ loading ? 'Uploading...' : 'Submit'}}
+          {{ loading ? 'Uploading...' : 'Submit' }}
         </FormKit>
       </div>
     </div>
@@ -59,17 +59,17 @@ watch(uploadedPhoto, async (newVal, oldVal) => {
   if (newVal) emit('photoUploaded', uploadedPhoto.value)
 })
 
-watchEffect(images, async (newVal, oldVal) => {
-  if (newVal) {
-    // uploadButton.click()
-    console.log(newVal)
-  }
-})
+// watchEffect(images, async (newVal, oldVal) => {
+//   if (newVal) {
+//      uploadButton.click()
+//     console.log(newVal)
+//   }
+// })
 
-watchEffect(uploadedPhoto, (value, oldVal) => {
-  console.log(value)
-  emit('photoUploaded', uploadedPhoto.value)
-});
+// watchEffect(uploadedPhoto, (value, oldVal) => {
+//   console.log(value)
+//   emit('photoUploaded', uploadedPhoto.value)
+// });
 
 const submitHandler = async (data) => {
   const body = new FormData()
