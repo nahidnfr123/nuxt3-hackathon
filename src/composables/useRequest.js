@@ -8,7 +8,7 @@ const $api = {
       baseURL: config.public.apiBaseUrl, // Set the api base url from .env ...
       onRequest({request, options}) {
         // Set the request headers
-        options.credentials= 'include'
+        options.credentials = 'include'
         options.headers = options.headers || {}
         if (accessToken()) options.headers.Authorization = `Bearer ${accessToken()}` // Set the authorization token ...
         options.headers.accept = 'application/json' // header accept application/json is required ... Otherwise backend throws 302 status ...
@@ -26,6 +26,7 @@ const $api = {
         if (__.showError) dispatchError(response, __.errorMessage) // Show Error Toast ...
       }
     })
+    // console.log(data.value)
     return {data, pending, refresh, error}
   },
   async post(url, payload, __ = {showSuccess: true, showError: true, successMessage: 'Success', errorMessage: ''}) { /// Performs POST and PUT request ...
@@ -34,7 +35,7 @@ const $api = {
       baseURL: config.public.apiBaseUrl, // Set the api base url from .env ...
       onRequest({request, options}) {
         // Set the request headers
-        options.credentials= 'include'
+        options.credentials = 'include'
         options.body = payload
         options.method = 'POST'
         options.headers = options.headers || {}
