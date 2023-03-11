@@ -18,13 +18,11 @@
           <td class="border px-4 py-2">{{ user.name }}</td>
           <td class="border px-4 py-2">{{ user.email }}</td>
           <td class="border px-4 py-2">{{ user.phone }}</td>
-          <td class="border px-4 py-2">{{ user.create_at }}</td>
+          <td class="border px-4 py-2">{{ user.created_at }}</td>
         </tr>
         </tbody>
       </table>
-
     </div>
-
   </Container>
 </template>
 
@@ -37,7 +35,7 @@ definePageMeta({
   middleware: ["require-auth"]
 })
 
-const response = $api.get('/users')
+// const {data} = await $api.get('user')
 // onMounted(() => {
 const {data} = useFetch('http://127.0.0.1:8088/api/users')
 console.log(data.value)
