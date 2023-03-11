@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   // },
   runtimeConfig: {
     public: {
-      siteName: 'Nuxt, Pinia, Laravel Starter',
+      siteName: 'Hackathon',
       apiBaseUrl: process.env.NUXT_API_BASE_URL || 'http://127.0.0.1:8088/api/'
     }
   }
