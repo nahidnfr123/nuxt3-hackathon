@@ -1,11 +1,11 @@
 module.exports = {
   apps: [
     {
-      name: 'Nuxt3Hackathon',
-      port: '3000',
+      name: 'Nuxt3',
       exec_mode: 'cluster',
-      instances: 'max',
-      script: './.output/server/index.mjs'
+      instances: 'max', // Or a number of instances
+      script: './node_modules/nuxt/bin/nuxt.js',
+      args: 'start'
     }
   ]
 }
