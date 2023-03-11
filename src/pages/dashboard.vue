@@ -37,9 +37,10 @@ definePageMeta({
 
 // const {data} = await $api.get('user')
 // onMounted(() => {
-const {data} = useFetch('http://127.0.0.1:8088/api/users')
-console.log(data.value)
-users.value = data.value?.data
+const config = useRuntimeConfig()
+const {data} = useFetch(config.public.apiBaseUrl + 'users')
+// console.log(data.value)
+users.value = data?.value?.data
 // })
 // const {data} = response
 // console.log(data)
